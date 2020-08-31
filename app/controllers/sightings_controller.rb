@@ -1,4 +1,9 @@
 class SightingsController < ApplicationController
+  
+  def initialize(sighting_object)
+    @sighting = sighting_object
+  end
+ 
     def index
     sightings = Sighting.all
     render json: sightings.to_json(:include => {
